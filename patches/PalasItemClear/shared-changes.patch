@@ -1,0 +1,122 @@
+--- a/common/src/main/java/net/palasitemclear/command/ClearAdminService.java
++++ b/common/src/main/java/net/palasitemclear/command/ClearAdminService.java
+@@ -50,10 +50,14 @@
+         ClearResult lastResult = controller.lastResult();
+         long remainingSeconds = ticksToSeconds(controller.remainingTicks());
+
+-        return "Scheduler: " + controller.state()
+-                + ". Interval: " + config.schedule().intervalSeconds() + "s."
+-                + " Next clear in: " + remainingSeconds + "s."
+-                + " Last clear removed: " + lastResult.totalRemoved() + " items.";
++        return "Agendador: " + switch (controller.state()) {
++                    case RUNNING -> "ativo";
++                    case PAUSED -> "pausado";
++                    case STOPPED -> "parado";
++                }
++                + ". Intervalo: " + config.schedule().intervalSeconds() + "s."
++                + " Próxima limpeza em: " + remainingSeconds + "s."
++                + " Última limpeza removeu: " + lastResult.totalRemoved() + " itens.";
+     }
+
+     public static String nextClear(ServerClearController controller) {
+@@ -62,10 +66,10 @@
+         }
+
+         if (controller.state() != ClearScheduler.State.RUNNING) {
+-            return "The scheduler is " + controller.state() + "; no clear is scheduled.";
++            return "O agendador está pausado ou parado; não há limpeza agendada.";
+         }
+
+-        return "Next clear in " + ticksToSeconds(controller.remainingTicks()) + " seconds.";
++        return "Próxima limpeza em " + ticksToSeconds(controller.remainingTicks()) + " segundos.";
+     }
+
+     public static String clearNow(ServerClearController controller) {
+@@ -74,7 +78,7 @@
+         }
+
+         ClearResult result = controller.clearNow();
+-        return "Cleared " + result.totalRemoved() + " dropped items.";
++        return "Limpeza concluída: " + result.totalRemoved() + " itens removidos.";
+     }
+
+     public static String pause(ServerClearController controller) {
+--- a/common/src/main/java/net/palasitemclear/config/ConfigValidator.java
++++ b/common/src/main/java/net/palasitemclear/config/ConfigValidator.java
+@@ -48,7 +48,7 @@
+         return new ModConfig(
+                 configVersion,
+                 new ScheduleConfig(schedule.intervalSeconds(), warningSeconds),
+-                new MessagesConfig(warningMessage, clearedMessage),
++                new MessagesConfig(warningMessage, clearedMessage, messages.emptyCleared()),
+                 new FiltersConfig(
+                         excludedItems,
+                         excludedDimensions,
+--- a/common/src/main/java/net/palasitemclear/config/MessagesConfig.java
++++ b/common/src/main/java/net/palasitemclear/config/MessagesConfig.java
+@@ -1,6 +1,14 @@
+ package net.palasitemclear.config;
+
+-public record MessagesConfig(String warning, String cleared) {
++public record MessagesConfig(String warning, String cleared, String emptyCleared) {
++    public MessagesConfig {
++        // Existing JSON has only warning/cleared. Keep its language and styling for zero too.
++        if (emptyCleared == null || emptyCleared.isBlank()) emptyCleared = cleared;
++    }
++
++    public MessagesConfig(String warning, String cleared) {
++        this(warning, cleared, cleared);
++    }
+     public static MessagesConfig defaults() {
+         return new MessagesConfig(
+                 "<yellow>Items on the ground will be cleared in <gold>{seconds}</gold> seconds.",
+--- a/common/src/main/java/net/palasitemclear/server/ServerClearController.java
++++ b/common/src/main/java/net/palasitemclear/server/ServerClearController.java
+@@ -5,6 +5,8 @@
+ import java.util.List;
+ import java.util.Map;
+ import java.util.Set;
++import java.math.BigDecimal;
++import java.math.RoundingMode;
+ import net.minecraft.network.chat.Component;
+ import net.minecraft.server.MinecraftServer;
+ import net.palasitemclear.PalasItemClear;
+@@ -145,7 +147,7 @@
+             lastResult = clearer.clear(activeServer, filter, captured);
+             recoveryBin.deposit(captured, activeServer.getTickCount(), config.bin().retentionTicks());
+             broadcastClearMessage(activeServer, config, lastResult);
+-            LOGGER.info("Dropped item clear completed: removed={}, dimensions={}",
++            LOGGER.info("Limpeza de itens concluída: removidos={}, dimensões={}",
+                     lastResult.totalRemoved(), lastResult.removedByDimension().size());
+         } catch (RuntimeException exception) {
+             LOGGER.error("Dropped item clear failed; the scheduler will continue", exception);
+@@ -224,18 +226,22 @@
+                     Map.of("seconds", Integer.toString(seconds))
+             );
+             activeServer.getPlayerList().broadcastSystemMessage(message, false);
+-            LOGGER.info("Broadcast clear warning for {} seconds remaining", seconds);
++            LOGGER.info("Aviso de limpeza enviado: faltam {} segundos.", seconds);
+         }
+     }
+
+     private void broadcastClearMessage(MinecraftServer activeServer, ModConfig config, ClearResult result) {
+-        if (result.totalRemoved() <= 0) {
+-            return;
+-        }
+-
++        // Every completed cycle must tell players when to expect the next one, including zero.
++        int intervalSeconds = config.schedule().intervalSeconds();
++        String template = result.totalRemoved() == 0
++                ? config.messages().emptyCleared() : config.messages().cleared();
+         Component message = MiniMessageRenderer.render(
+-                config.messages().cleared(),
+-                Map.of("count", Integer.toString(result.totalRemoved()))
++                template,
++                Map.of("count", Integer.toString(result.totalRemoved()),
++                       "intervalSeconds", Integer.toString(intervalSeconds),
++                       "nextMinutes", BigDecimal.valueOf(intervalSeconds)
++                               .divide(BigDecimal.valueOf(60), 4, RoundingMode.HALF_UP)
++                               .stripTrailingZeros().toPlainString())
+         );
+         activeServer.getPlayerList().broadcastSystemMessage(message, false);
+     }

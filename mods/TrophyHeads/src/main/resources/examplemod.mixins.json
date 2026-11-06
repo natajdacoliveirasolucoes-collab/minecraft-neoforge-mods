@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tandy.trophyheads.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "SkullBlockEntityMixin",
+    "BlockMixin"
+  ],
+  "client": [
+    "client.SkinManagerInvoker",
+    "client.SkullBlockRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

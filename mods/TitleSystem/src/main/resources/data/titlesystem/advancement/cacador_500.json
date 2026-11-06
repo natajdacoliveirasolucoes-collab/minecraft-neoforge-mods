@@ -1,0 +1,30 @@
+{
+  "parent": "titlesystem:primeiro_sangue",
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:custom_model_data": 5,
+        "minecraft:enchantment_glint_override": true
+      }
+    },
+    "title": {
+      "text": "CAÇADOR DE CABEÇAS IV",
+      "color": "#9966CC",
+      "bold": true
+    },
+    "description": {
+      "text": "Cause 500 mortes em PvP.",
+      "color": "#9966CC"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "kills": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

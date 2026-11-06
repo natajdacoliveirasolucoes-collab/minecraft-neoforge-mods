@@ -1,0 +1,41 @@
+{
+  "initial_release": "v2026.11.06",
+  "artifacts": [
+    {
+      "filename": "TrophyHeads-1.0.2.jar",
+      "sha256": "e724a4cfc8fc12e16bebcc3c0f3327942d33a2393c8ae0584373b8d6b308e17c",
+      "version": "1.0.2",
+      "kind": "original"
+    },
+    {
+      "filename": "TitleSystem-1.0.1.jar",
+      "sha256": "e1b9401e0102e88dd6c8ed8921ae2cdf04c1c40e8466f5bdc85deb90ed824485",
+      "version": "1.0.1",
+      "kind": "original"
+    },
+    {
+      "filename": "LiveWhitelist-1.0.0.jar",
+      "sha256": "f9fb6d21dccad8c7b8ac2b429b33b12d40f87dbbe243d4d6d5cf48afef3d0d14",
+      "version": "1.0.0",
+      "kind": "original"
+    },
+    {
+      "filename": "ServerCountdown-1.0.1.jar",
+      "sha256": "a8c1116a86342e6e568ffb3e129b916361f393579356f03198c746ee77fa2887",
+      "version": "1.0.1",
+      "kind": "original"
+    },
+    {
+      "filename": "PackRules-1.0.1.jar",
+      "sha256": "a49ec579261baa4856a2fffcb248039b9bfc8f3d985716f2987438bfb12cedd1",
+      "version": "1.0.1",
+      "kind": "original"
+    },
+    {
+      "filename": "palas-item-clear-1.21.1-neoforge-0.1.2-local.2.jar",
+      "sha256": "d550ce77ca67575844ddf0c17f9415ec645d076ce8f2b6cac3ad82d98e0aaf56",
+      "version": "0.1.2-local.2",
+      "kind": "patch"
+    }
+  ]
+}

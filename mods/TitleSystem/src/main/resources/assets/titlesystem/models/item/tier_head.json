@@ -1,0 +1,44 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "titlesystem:item/tier_head"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "titlesystem:item/tier_head_1"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2
+      },
+      "model": "titlesystem:item/tier_head_2"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3
+      },
+      "model": "titlesystem:item/tier_head_3"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4
+      },
+      "model": "titlesystem:item/tier_head_4"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5
+      },
+      "model": "titlesystem:item/tier_head_5"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 6
+      },
+      "model": "titlesystem:item/tier_head_6"
+    }
+  ]
+}

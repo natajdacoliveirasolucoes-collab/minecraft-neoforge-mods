@@ -1,0 +1,29 @@
+{
+  "parent": "titlesystem:primeiro_sangue",
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:custom_model_data": 2
+      }
+    },
+    "title": {
+      "text": "CAÇADOR DE CABEÇAS I",
+      "color": "#CD7F32",
+      "bold": true
+    },
+    "description": {
+      "text": "Cause 25 mortes em PvP.",
+      "color": "#CD7F32"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "kills": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:player_head"
+    },
+    "title": {
+      "text": "TROFÉUS DE CABEÇAS",
+      "color": "#FF2B2B",
+      "bold": true
+    },
+    "description": {
+      "text": "Conquistas de PvP e coleção de cabeças."
+    },
+    "frame": "task",
+    "background": "minecraft:textures/gui/advancements/backgrounds/nether.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "joined": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

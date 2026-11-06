@@ -1,0 +1,212 @@
+{
+  "parent": "titlesystem:primeiro_sangue",
+  "display": {
+    "icon": {
+      "id": "minecraft:paper",
+      "components": {
+        "minecraft:custom_model_data": 6,
+        "minecraft:enchantment_glint_override": true
+      }
+    },
+    "title": {
+      "text": "",
+      "extra": [
+        {
+          "text": "C",
+          "color": "#FF0000"
+        },
+        {
+          "text": "A",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "Ç",
+          "color": "#FFFF00"
+        },
+        {
+          "text": "A",
+          "color": "#00FF00"
+        },
+        {
+          "text": "D",
+          "color": "#00FFFF"
+        },
+        {
+          "text": "O",
+          "color": "#007FFF"
+        },
+        {
+          "text": "R",
+          "color": "#8B00FF"
+        },
+        {
+          "text": " ",
+          "color": "#FF0000"
+        },
+        {
+          "text": "D",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "E",
+          "color": "#FFFF00"
+        },
+        {
+          "text": " ",
+          "color": "#00FF00"
+        },
+        {
+          "text": "C",
+          "color": "#00FFFF"
+        },
+        {
+          "text": "A",
+          "color": "#007FFF"
+        },
+        {
+          "text": "B",
+          "color": "#8B00FF"
+        },
+        {
+          "text": "E",
+          "color": "#FF0000"
+        },
+        {
+          "text": "Ç",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "A",
+          "color": "#FFFF00"
+        },
+        {
+          "text": "S",
+          "color": "#00FF00"
+        },
+        {
+          "text": " ",
+          "color": "#00FFFF"
+        },
+        {
+          "text": "V",
+          "color": "#007FFF"
+        }
+      ],
+      "bold": true
+    },
+    "description": {
+      "text": "",
+      "extra": [
+        {
+          "text": "C",
+          "color": "#FF0000"
+        },
+        {
+          "text": "a",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "u",
+          "color": "#FFFF00"
+        },
+        {
+          "text": "s",
+          "color": "#00FF00"
+        },
+        {
+          "text": "e",
+          "color": "#00FFFF"
+        },
+        {
+          "text": " ",
+          "color": "#007FFF"
+        },
+        {
+          "text": "1",
+          "color": "#8B00FF"
+        },
+        {
+          "text": "0",
+          "color": "#FF0000"
+        },
+        {
+          "text": "0",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "0",
+          "color": "#FFFF00"
+        },
+        {
+          "text": " ",
+          "color": "#00FF00"
+        },
+        {
+          "text": "m",
+          "color": "#00FFFF"
+        },
+        {
+          "text": "o",
+          "color": "#007FFF"
+        },
+        {
+          "text": "r",
+          "color": "#8B00FF"
+        },
+        {
+          "text": "t",
+          "color": "#FF0000"
+        },
+        {
+          "text": "e",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "s",
+          "color": "#FFFF00"
+        },
+        {
+          "text": " ",
+          "color": "#00FF00"
+        },
+        {
+          "text": "e",
+          "color": "#00FFFF"
+        },
+        {
+          "text": "m",
+          "color": "#007FFF"
+        },
+        {
+          "text": " ",
+          "color": "#8B00FF"
+        },
+        {
+          "text": "P",
+          "color": "#FF0000"
+        },
+        {
+          "text": "v",
+          "color": "#FF7F00"
+        },
+        {
+          "text": "P",
+          "color": "#FFFF00"
+        },
+        {
+          "text": ".",
+          "color": "#00FF00"
+        }
+      ]
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "kills": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+plugins { id 'java-library' }
+version = '2.0.3-nata'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+repositories { mavenCentral() }
+dependencies { implementation 'org.ow2.asm:asm:9.10.1' }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.register('forkSmallShips', JavaExec) {
+    dependsOn tasks.named('classes')
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'BuildFork'
+    args file('upstream/smallships-neoforge-1.21.1-2.0.2.jar'), file('build/fork/smallships-neoforge-1.21.1-2.0.3-nata.jar'), file('src/main/java/BuildFork.java')
+}
+tasks.named('build') { dependsOn tasks.named('forkSmallShips') }

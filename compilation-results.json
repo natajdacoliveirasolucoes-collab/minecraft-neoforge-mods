@@ -1,0 +1,188 @@
+{
+  "all_passed": true,
+  "builds": [
+    {
+      "project": "TrophyHeads",
+      "exit_code": 0,
+      "seconds": 44.8
+    },
+    {
+      "project": "TitleSystem",
+      "exit_code": 0,
+      "seconds": 9.1
+    },
+    {
+      "project": "LiveWhitelist",
+      "exit_code": 0,
+      "seconds": 31.2
+    },
+    {
+      "project": "ServerCountdown",
+      "exit_code": 0,
+      "seconds": 20.5
+    },
+    {
+      "project": "PackRules",
+      "exit_code": 0,
+      "seconds": 18.4
+    },
+    {
+      "project": "GateKeepRuntimeFork",
+      "exit_code": 0,
+      "seconds": 21.3
+    },
+    {
+      "project": "PlayerEngineAuthFork",
+      "exit_code": 0,
+      "seconds": 23.2
+    },
+    {
+      "project": "SmallShipsConfigFork",
+      "exit_code": 0,
+      "seconds": 14.9
+    },
+    {
+      "project": "PalasItemClear",
+      "exit_code": 0,
+      "seconds": 57.3
+    }
+  ],
+  "same_executable_classes_as_validated_artifacts": [
+    {
+      "project": "TrophyHeads",
+      "class_count": 11,
+      "same_executable_classes": true
+    },
+    {
+      "project": "TitleSystem",
+      "class_count": 16,
+      "same_executable_classes": true
+    },
+    {
+      "project": "LiveWhitelist",
+      "class_count": 1,
+      "same_executable_classes": true
+    },
+    {
+      "project": "ServerCountdown",
+      "class_count": 3,
+      "same_executable_classes": true
+    },
+    {
+      "project": "PackRules",
+      "class_count": 2,
+      "same_executable_classes": true
+    },
+    {
+      "project": "GateKeepRuntimeFork",
+      "class_count": 11,
+      "same_executable_classes": true
+    },
+    {
+      "project": "PlayerEngineAuthFork",
+      "class_count": 1765,
+      "same_executable_classes": true
+    },
+    {
+      "project": "SmallShipsConfigFork",
+      "class_count": 306,
+      "same_executable_classes": true
+    },
+    {
+      "project": "PalasItemClear",
+      "class_count": 35,
+      "same_executable_classes": true
+    }
+  ],
+  "unit_test_totals": {
+    "tests": 63,
+    "failures": 0,
+    "errors": 0
+  },
+  "unit_test_suites": [
+    {
+      "project": "ServerCountdown",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0
+    },
+    {
+      "project": "PalasItemClear",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "path": "patches/GateKeepRuntimeFork/upstream/GateKeep-1.21.x-neoforge-1.0.0.jar",
+    "sha256": "aa6f16ccca66d6416e24f41d188b79d3fbdc9c93c6aa9582e4342a37c3c4c280",
+    "url": "https://cdn.modrinth.com/data/MRyILNIs/versions/7sgR7Y4e/GateKeep-1.21.x-neoforge-1.0.0.jar"
+  },
+  {
+    "path": "patches/PlayerEngineAuthFork/upstream/playerengine-neoforge-1.21.1-1.4.0.jar",
+    "sha256": "19a9910bb5be4cca1d32aa3d5f83a4b9bdd0a8429395a1679414095cbbf8b0a6",
+    "url": "https://cdn.modrinth.com/data/nUOXthgN/versions/9cN9nlTk/playerengine-neoforge-1.21.1-1.4.0.jar"
+  },
+  {
+    "path": "patches/SmallShipsConfigFork/upstream/smallships-neoforge-1.21.1-2.0.2.jar",
+    "sha256": "aed11c65cd44a62309f52528727f83d05f74cced5cd93951692972273c340796",
+    "url": "https://cdn.modrinth.com/data/rGWEHQrP/versions/2iLK0Wz6/smallships-neoforge-1.21.1-2.0.2.jar"
+  },
+  {
+    "path": "mods/PackRules/deps/mobchampions-1.21.1-neoforge-1.0.2.2-NEOFORGE.jar",
+    "sha256": "eb083a25848421b9769bfe423e449b75ba62cc78fea9f3238bc0eefc2cbf18f1",
+    "url": "https://cdn.modrinth.com/data/zrbKKaSr/versions/Tht5nbz9/mobchampions-1.21.1-neoforge-1.0.2.2-NEOFORGE.jar"
+  },
+  {
+    "path": "mods/PackRules/deps/whitenoise-inspection.jar",
+    "sha256": "a90ccb10cd5be275730c2977bfd2594a5d4f8ca35db29cea40de4deea29fe3f1",
+    "from": "mods/PackRules/deps/mobchampions-1.21.1-neoforge-1.0.2.2-NEOFORGE.jar",
+    "member": "META-INF/jarjar/whitenoise-1.21.1-neoforge-2.2.1.jar"
+  }
+]

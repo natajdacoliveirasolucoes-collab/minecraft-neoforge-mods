@@ -1,0 +1,115 @@
+{
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.265",
+  "maintainer": "Natã Oliveira (nata)",
+  "projects": [
+    {
+      "name": "TrophyHeads",
+      "version": "1.0.2",
+      "kind": "original",
+      "source": "mods/TrophyHeads",
+      "artifact": "TrophyHeads-1.0.2.jar",
+      "side": "Servidor; cliente para renderizar snapshots PNG",
+      "changes": "Captura independente da skin na coleta; integracao com Quick Skin; compatibilidade dos trofeus antigos.",
+      "binary_release": true
+    },
+    {
+      "name": "TitleSystem",
+      "version": "1.0.1",
+      "kind": "original",
+      "source": "mods/TitleSystem",
+      "artifact": "TitleSystem-1.0.1.jar",
+      "side": "Servidor; cliente visual opcional",
+      "changes": "Titulos PvP, aba de conquistas e previa temporaria administrativa.",
+      "binary_release": true
+    },
+    {
+      "name": "LiveWhitelist",
+      "version": "1.0.0",
+      "kind": "original",
+      "source": "mods/LiveWhitelist",
+      "artifact": "LiveWhitelist-1.0.0.jar",
+      "side": "Servidor",
+      "changes": "Correcao do UUID offline por grafia do nick; integracao com DirectAuth; alteracoes sem reiniciar.",
+      "binary_release": true
+    },
+    {
+      "name": "ServerCountdown",
+      "version": "1.0.1",
+      "kind": "original",
+      "source": "mods/ServerCountdown",
+      "artifact": "ServerCountdown-1.0.1.jar",
+      "side": "Servidor",
+      "changes": "Bossbar de contagem; comandos ao vivo; preferencias individuais; horario America/Manaus.",
+      "binary_release": true
+    },
+    {
+      "name": "PackRules",
+      "version": "1.0.1",
+      "kind": "original",
+      "source": "mods/PackRules",
+      "artifact": "PackRules-1.0.1.jar",
+      "side": "Servidor",
+      "changes": "Bloqueio configuravel de entidades e demonstracao administrativa de campeoes na barra de acao.",
+      "binary_release": true
+    },
+    {
+      "name": "QuietPlayer2",
+      "version": "1.0.0",
+      "kind": "deprecated",
+      "source": "archive/QuietPlayer2",
+      "artifact": "QuietPlayer2-1.0.0.jar",
+      "side": "Servidor",
+      "changes": "Filtro inicial de avisos, substituido pelo patch do PlayerEngine.",
+      "binary_release": false
+    },
+    {
+      "name": "GateKeepRuntimeFork",
+      "version": "1.0.1-nata",
+      "kind": "patch",
+      "source": "patches/GateKeepRuntimeFork",
+      "artifact": "GateKeep-1.21.x-neoforge-1.0.1-nata.jar",
+      "side": "Servidor",
+      "changes": "Comandos lock/unlock/status/reload sem reinicio; persistencia atomica e permissao nivel 3.",
+      "binary_release": false,
+      "upstream": "https://modrinth.com/mod/gate-keep",
+      "base_version": "1.0.0"
+    },
+    {
+      "name": "PlayerEngineAuthFork",
+      "version": "1.4.0-authnotices.2",
+      "kind": "patch",
+      "source": "patches/PlayerEngineAuthFork",
+      "artifact": "playerengine-neoforge-1.21.1-1.4.0-authnotices.2.jar",
+      "side": "Cliente e servidor",
+      "changes": "Flag showAuthNotices, padrao false; preserva autorizacao e mensagens comuns.",
+      "binary_release": false,
+      "upstream": "https://modrinth.com/mod/playerengine",
+      "base_version": "1.21.1-1.4.0"
+    },
+    {
+      "name": "SmallShipsConfigFork",
+      "version": "2.0.3-nata",
+      "kind": "patch",
+      "source": "patches/SmallShipsConfigFork",
+      "artifact": "smallships-neoforge-1.21.1-2.0.3-nata.jar",
+      "side": "Cliente e servidor",
+      "changes": "Evita acesso a configuracao descarregada durante ModConfigEvent.Unloading; preserva Loading e Reloading.",
+      "binary_release": false,
+      "upstream": "https://modrinth.com/mod/small-ships",
+      "base_version": "2.0.2"
+    },
+    {
+      "name": "PalasItemClear",
+      "version": "0.1.2-local.2",
+      "kind": "patch",
+      "source": "patches/PalasItemClear",
+      "artifact": "palas-item-clear-1.21.1-neoforge-0.1.2-local.2.jar",
+      "side": "Servidor",
+      "changes": "Resultado mesmo com zero itens; placeholders do intervalo; respostas e logs em PT-BR.",
+      "binary_release": true,
+      "upstream": "https://github.com/Palawizard/PalasItemClear",
+      "base_version": "v0.1.2"
+    }
+  ]
+}

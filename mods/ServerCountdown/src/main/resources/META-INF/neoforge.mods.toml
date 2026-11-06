@@ -1,0 +1,20 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="servercountdown"
+version="1.0.1"
+displayName="Server Countdown"
+description="Server-controlled countdown bossbar with individual visibility preferences. No client mod required."
+[[dependencies.servercountdown]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="SERVER"
+[[dependencies.servercountdown]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="SERVER"

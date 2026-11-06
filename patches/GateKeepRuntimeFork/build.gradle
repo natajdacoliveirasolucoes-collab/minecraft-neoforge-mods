@@ -1,0 +1,25 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+version = '1.0.1-nata'
+group = 'com.tandy.gatekeepfork'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+neoForge {
+    version = project.neo_version
+    parchment { minecraftVersion = '1.21.1'; mappingsVersion = '2024.11.17' }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+repositories { mavenCentral() }
+
+dependencies {
+    compileOnly files('upstream/GateKeep-1.21.x-neoforge-1.0.0.jar')
+    implementation 'org.ow2.asm:asm:9.10.1'
+}
+tasks.register('forkGateKeep', JavaExec) {
+    dependsOn tasks.named('classes')
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.tandy.gatekeepfork.BuildFork'
+    args file('upstream/GateKeep-1.21.x-neoforge-1.0.0.jar'), file('build/fork/GateKeep-1.21.x-neoforge-1.0.1-nata.jar'), file('build/classes/java/main'), file('src/main/java')
+}
+tasks.named('build') { dependsOn tasks.named('forkGateKeep') }

@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="packrules"
+version="1.0.1"
+displayName="Pack Rules"
+description="Server-only spawn exclusions for the configured local mobpack rules."
+[[dependencies.packrules]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="SERVER"
+[[dependencies.packrules]]
+modId="mobchampions"
+type="optional"
+versionRange="[1.0,)"
+ordering="AFTER"
+side="SERVER"
+[[dependencies.packrules]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="SERVER"
