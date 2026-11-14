@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+[[mods]]
+modId="mekataczcompat"
+version="1.0.0"
+displayName="MekaSuit - TaCZ Arm Compatibility"
+authors="Natã Oliveira (nata)"
+description="Preserves TaCZ first-person gun poses by skipping MekaSuit's arm replacement while holding a gun. Patch local por Natã Oliveira (nata)."
+
+[[mixins]]
+config="mekataczcompat.mixins.json"
+
+[[dependencies.mekataczcompat]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.265,21.2)"
+side="CLIENT"
+[[dependencies.mekataczcompat]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+side="CLIENT"
+[[dependencies.mekataczcompat]]
+modId="mekanism"
+type="required"
+versionRange="[10.7,10.8)"
+side="CLIENT"
+[[dependencies.mekataczcompat]]
+modId="tacz"
+type="required"
+versionRange="[1.1.8,1.2)"
+side="CLIENT"

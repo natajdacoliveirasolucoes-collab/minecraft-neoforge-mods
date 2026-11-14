@@ -5,7 +5,9 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "SkullBlockEntityMixin",
-    "BlockMixin"
+    "BlockMixin",
+    "ProjectEMagnetMixin",
+    "ArtifactsMagnetMixin"
   ],
   "client": [
     "client.SkinManagerInvoker",

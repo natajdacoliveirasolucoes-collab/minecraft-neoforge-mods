@@ -5,22 +5,22 @@
   "projects": [
     {
       "name": "TrophyHeads",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "kind": "original",
       "source": "mods/TrophyHeads",
-      "artifact": "TrophyHeads-1.0.2.jar",
+      "artifact": "TrophyHeads-1.0.3.jar",
       "side": "Servidor; cliente para renderizar snapshots PNG",
-      "changes": "Captura independente da skin na coleta; integracao com Quick Skin; compatibilidade dos trofeus antigos.",
+      "changes": "Entrega ao assassino, protecao contra imas e persistencia dos perfis de cabecas antigas.",
       "binary_release": true
     },
     {
       "name": "TitleSystem",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "kind": "original",
       "source": "mods/TitleSystem",
-      "artifact": "TitleSystem-1.0.1.jar",
+      "artifact": "TitleSystem-1.0.2.jar",
       "side": "Servidor; cliente visual opcional",
-      "changes": "Titulos PvP, aba de conquistas e previa temporaria administrativa.",
+      "changes": "Preserva estatisticas e titulo nos clones do jogador, incluindo respawn e retorno do End.",
       "binary_release": true
     },
     {
@@ -45,12 +45,12 @@
     },
     {
       "name": "PackRules",
-      "version": "1.0.1",
+      "version": "1.0.5",
       "kind": "original",
       "source": "mods/PackRules",
-      "artifact": "PackRules-1.0.1.jar",
+      "artifact": "PackRules-1.0.5.jar",
       "side": "Servidor",
-      "changes": "Bloqueio configuravel de entidades e demonstracao administrativa de campeoes na barra de acao.",
+      "changes": "Regras de campeoes, mapeamento EMC e auditoria privada de saldos ProjectE.",
       "binary_release": true
     },
     {
@@ -110,6 +110,28 @@
       "binary_release": true,
       "upstream": "https://github.com/Palawizard/PalasItemClear",
       "base_version": "v0.1.2"
+    },
+    {
+      "name": "MekaTaCZCompat",
+      "version": "1.0.0",
+      "kind": "original",
+      "source": "mods/MekaTaCZCompat",
+      "artifact": "MekaTaCZCompat-1.0.0.jar",
+      "side": "Cliente",
+      "changes": "Compatibilidade da renderizacao dos bracos MekaSuit ao segurar armas TaCZ; toggle local.",
+      "binary_release": true
+    },
+    {
+      "name": "TaCZInventorySyncFork",
+      "version": "1.1.8-hotfix-r8-server",
+      "kind": "patch",
+      "source": "patches/TaCZInventorySyncFork",
+      "artifact": "tacz-neoforge-1.21.1-1.1.8-hotfix-r8-server.jar",
+      "side": "Servidor",
+      "changes": "Sincroniza municao de armas alimentadas pelo inventario, preservando protocolo, cadencia, consumo e recursos originais.",
+      "binary_release": false,
+      "upstream": "https://modrinth.com/mod/timeless-and-classics-zero",
+      "base_version": "1.1.8-hotfix-r7"
     }
   ]
 }

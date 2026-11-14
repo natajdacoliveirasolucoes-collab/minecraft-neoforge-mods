@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-14",
+  "scope": "Five updated/new projects rebuilt from public repository layout",
+  "all_passed": true,
+  "builds": [
+    {
+      "exit_code": 0,
+      "project": "mods\\TrophyHeads"
+    },
+    {
+      "exit_code": 0,
+      "project": "mods\\TitleSystem"
+    },
+    {
+      "exit_code": 0,
+      "project": "mods\\PackRules"
+    },
+    {
+      "exit_code": 0,
+      "project": "mods\\MekaTaCZCompat"
+    },
+    {
+      "exit_code": 0,
+      "project": "patches\\TaCZInventorySyncFork"
+    }
+  ],
+  "same_executable_classes_as_local_artifacts": [
+    {
+      "project": "TrophyHeads",
+      "same_executable_classes": true,
+      "class_count": 14
+    },
+    {
+      "project": "TitleSystem",
+      "same_executable_classes": true,
+      "class_count": 16
+    },
+    {
+      "project": "PackRules",
+      "same_executable_classes": true,
+      "class_count": 9
+    },
+    {
+      "project": "MekaTaCZCompat",
+      "same_executable_classes": true,
+      "class_count": 2
+    }
+  ],
+  "tacz_changed_existing_entries": [
+    "com/tacz/guns/entity/shooter/LivingEntityShoot.class",
+    "com/tacz/guns/event/ServerTickEvent.class",
+    "META-INF/neoforge.mods.toml"
+  ],
+  "limitations": "Build and class comparisons are not new gameplay/visual tests."
+}

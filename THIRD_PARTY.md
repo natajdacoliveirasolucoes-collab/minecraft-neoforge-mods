@@ -8,3 +8,6 @@
 - ASM, Gradle e dependencias do NeoForge sao obtidos pelos sistemas de build; nao sao reempacotados como fontes proprios.
 
 Os creditos originais permanecem nos builders e nos metadados dos artefatos gerados. A marca nata identifica a alteracao local; nao substitui a autoria original.
+
+- TaCZ: base NeoForge 1.1.8-hotfix-r7. Publicado somente nosso helper de sincronizacao e o builder ASM, sem os recursos ou binario upstream. O builder verifica o SHA-256 exato da base. https://modrinth.com/mod/timeless-and-classics-zero
+- MekaTaCZCompat: mod de compatibilidade separado; usa os mods Mekanism e TaCZ como dependencias de compilacao, sem redistribui-los. https://modrinth.com/mod/mekanism

@@ -66,8 +66,13 @@ public final class ChampionDemoCommand {
         // Finalization runs the mod's own rank builder AND its own notification path.
         synchronized (MobChampions.RANDOM) {
             MobChampions.RANDOM.setSeed(chosenSeed);
-            EventHooks.finalizeMobSpawn(zombie, level, level.getCurrentDifficultyAt(zombie.blockPosition()),
-                MobSpawnType.COMMAND, null);
+            zombie.getPersistentData().putBoolean("packrules_champion_demo", true);
+            try {
+                EventHooks.finalizeMobSpawn(zombie, level, level.getCurrentDifficultyAt(zombie.blockPosition()),
+                    MobSpawnType.COMMAND, null);
+            } finally {
+                zombie.getPersistentData().remove("packrules_champion_demo");
+            }
         }
         var champion = Services.PLATFORM.getMobChampionData(zombie).orElseThrow();
         if (champion.getRank() != MobChampion.Rank.EPIC) {

@@ -19,6 +19,18 @@ public final class TitleData {
 
     private TitleData() {}
 
+    public static void copyProgress(net.minecraft.world.entity.player.Player original,
+                                    net.minecraft.world.entity.player.Player replacement) {
+        // Keep existing save keys: no migration, UUID/profile change or reset of old progression.
+        CompoundTag source = original.getPersistentData();
+        CompoundTag target = replacement.getPersistentData();
+        for (String key : new String[]{KILLS, CAPTURED, EQUIPPED, HIDDEN}) {
+            if (source.contains(key)) {
+                target.put(key, source.get(key).copy());
+            }
+        }
+    }
+
     public static int kills(ServerPlayer player) {
         return player.getPersistentData().getInt(KILLS);
     }

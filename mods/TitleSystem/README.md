@@ -1,4 +1,4 @@
-# TitleSystem 1.0.1
+# TitleSystem 1.0.2
 
 Titulos PvP, aba de conquistas e previa temporaria administrativa.
 
@@ -8,7 +8,7 @@ Lado: Servidor; cliente visual opcional.
 
 Projeto proprio.
 
-Artefato: `TitleSystem-1.0.1.jar`.
+Artefato: `TitleSystem-1.0.2.jar`.
 
 Build: entre neste diretorio e execute `./gradlew build --console=plain` (Windows: `gradlew.bat build --console=plain`).
 

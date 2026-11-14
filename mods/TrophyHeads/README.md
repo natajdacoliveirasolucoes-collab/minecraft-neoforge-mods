@@ -1,4 +1,4 @@
-# TrophyHeads 1.0.2
+# TrophyHeads 1.0.3
 
 Captura independente da skin na coleta; integracao com Quick Skin; compatibilidade dos trofeus antigos.
 
@@ -8,7 +8,7 @@ Lado: Servidor; cliente para renderizar snapshots PNG.
 
 Projeto proprio.
 
-Artefato: `TrophyHeads-1.0.2.jar`.
+Artefato: `TrophyHeads-1.0.3.jar`.
 
 Build: entre neste diretorio e execute `./gradlew build --console=plain` (Windows: `gradlew.bat build --console=plain`).
 

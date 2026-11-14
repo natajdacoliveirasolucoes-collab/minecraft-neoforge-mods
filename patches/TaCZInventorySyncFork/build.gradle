@@ -1,0 +1,19 @@
+plugins { id 'java-library'; id 'net.neoforged.moddev' version '2.0.148' }
+version = '1.0.0'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+neoForge { version = '21.1.265'; parchment { minecraftVersion='1.21.1'; mappingsVersion='2024.11.17' } }
+tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8' }
+repositories { mavenCentral() }
+dependencies { compileOnly files('upstream/tacz-neoforge-1.21.1-1.1.8-hotfix-r7.jar') }
+
+sourceSets { patcher { java { srcDir '.'; include 'BuildFork.java' } } }
+dependencies { patcherImplementation 'org.ow2.asm:asm:9.10.1' }
+tasks.register('forkTaCZ', JavaExec) {
+    dependsOn tasks.named('classes'), tasks.named('patcherClasses')
+    classpath = sourceSets.patcher.runtimeClasspath
+    mainClass = 'BuildFork'
+    args file('upstream/tacz-neoforge-1.21.1-1.1.8-hotfix-r7.jar'), file('build/classes/java/main'),
+         file('build/fork/tacz-neoforge-1.21.1-1.1.8-hotfix-r8-server.jar'),
+         file('src/main/java/com/tacz/guns/nata/InventoryAmmoSync.java'), file('BuildFork.java')
+}
+tasks.named('build') { dependsOn tasks.named('forkTaCZ') }

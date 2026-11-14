@@ -34,7 +34,7 @@ public final class PlayerHeadDrops {
 
     private PlayerHeadDrops() {}
 
-    @SubscribeEvent
+    @SubscribeEvent(receiveCanceled = true)
     public static void onLivingDrops(LivingDropsEvent event) {
         if (!(event.getEntity() instanceof ServerPlayer victim)) {
             return;
@@ -42,7 +42,7 @@ public final class PlayerHeadDrops {
 
         try {
             Entity attacker = event.getSource().getEntity();
-            boolean pvpKill = attacker instanceof ServerPlayer;
+            boolean pvpKill = attacker instanceof ServerPlayer && attacker != victim;
 
             if (Config.DROP_HEAD_ONLY_ON_PVP.getAsBoolean() && !pvpKill) {
                 TrophyHeads.LOGGER.debug(
@@ -110,13 +110,18 @@ public final class PlayerHeadDrops {
             }
             head.set(DataComponents.LORE, new ItemLore(lore));
 
-            event.getDrops().add(new ItemEntity(
-                    victim.level(),
-                    victim.getX(), victim.getY(0.5), victim.getZ(),
-                    head));
+            if (pvpKill) {
+                // Never put a PvP trophy into the victim's death-loot collection: corpse/grave
+                // mods consume or cancel that collection. Spawn a normal vanilla item at its owner.
+                TrophyDelivery.spawn((ServerPlayer) attacker, head);
+            } else if (!event.isCanceled()) {
+                // Keep the existing environmental-death behaviour, including grave integration.
+                event.getDrops().add(new ItemEntity(victim.level(),
+                        victim.getX(), victim.getY(0.5), victim.getZ(), head));
+            }
 
             TrophyHeads.LOGGER.debug("Dropped {}'s head at {} (pvp={})",
-                    profile.getName(), victim.position(), pvpKill);
+                    profile.getName(), pvpKill ? attacker.position() : victim.position(), pvpKill);
         } catch (Exception exception) {
             TrophyHeads.LOGGER.error("Failed to create the player head drop for {}",
                     victim.getName().getString(), exception);

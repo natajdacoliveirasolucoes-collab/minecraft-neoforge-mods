@@ -17,6 +17,22 @@ public final class KillTracker {
     private KillTracker() {}
 
     @SubscribeEvent
+    public static void onClone(PlayerEvent.Clone event) {
+        // The new entity is created on death and on returning from the End. Copy even if
+        // titles are temporarily disabled, so disabling/re-enabling cannot erase progress.
+        if (event.getEntity() instanceof ServerPlayer) {
+            TitleData.copyProgress(event.getOriginal(), event.getEntity());
+        }
+    }
+
+    @SubscribeEvent
+    public static void onRespawn(PlayerEvent.PlayerRespawnEvent event) {
+        if (Config.ENABLED.get() && event.getEntity() instanceof ServerPlayer player) {
+            refresh(player);
+        }
+    }
+
+    @SubscribeEvent
     public static void onDeath(LivingDeathEvent event) {
         if (!Config.ENABLED.get()) {
             return;

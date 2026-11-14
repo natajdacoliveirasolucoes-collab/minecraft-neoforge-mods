@@ -3,9 +3,11 @@ loaderVersion="[4,)"
 license="All Rights Reserved"
 [[mods]]
 modId="packrules"
-version="1.0.1"
+version="1.0.5"
 displayName="Pack Rules"
-description="Server-only spawn exclusions for the configured local mobpack rules."
+description="Server rules for mob spawning, ProjectE pricing and private EMC audit history."
+[[mixins]]
+config="packrules.mixins.json"
 [[dependencies.packrules]]
 modId="neoforge"
 type="required"
@@ -16,6 +18,12 @@ side="SERVER"
 modId="mobchampions"
 type="optional"
 versionRange="[1.0,)"
+ordering="AFTER"
+side="SERVER"
+[[dependencies.packrules]]
+modId="projecte"
+type="optional"
+versionRange="[1.1.0,1.2.0)"
 ordering="AFTER"
 side="SERVER"
 [[dependencies.packrules]]

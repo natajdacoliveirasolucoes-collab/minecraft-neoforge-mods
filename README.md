@@ -6,16 +6,18 @@ Este repositorio organiza desenvolvimento; nao e o modpack completo para jogador
 
 | Projeto | Tipo | Base → versao local | Uso |
 |---|---|---|---|
-| [TrophyHeads](mods/TrophyHeads) | original | 1.0.2 | Servidor; cliente para renderizar snapshots PNG |
-| [TitleSystem](mods/TitleSystem) | original | 1.0.1 | Servidor; cliente visual opcional |
+| [TrophyHeads](mods/TrophyHeads) | original | 1.0.3 | Servidor; cliente para renderizar snapshots PNG |
+| [TitleSystem](mods/TitleSystem) | original | 1.0.2 | Servidor; cliente visual opcional |
 | [LiveWhitelist](mods/LiveWhitelist) | original | 1.0.0 | Servidor |
 | [ServerCountdown](mods/ServerCountdown) | original | 1.0.1 | Servidor |
-| [PackRules](mods/PackRules) | original | 1.0.1 | Servidor |
+| [PackRules](mods/PackRules) | original | 1.0.5 | Servidor |
 | [QuietPlayer2](archive/QuietPlayer2) | deprecated | 1.0.0 | Servidor |
 | [GateKeepRuntimeFork](patches/GateKeepRuntimeFork) | patch | 1.0.0 → 1.0.1-nata | Servidor |
 | [PlayerEngineAuthFork](patches/PlayerEngineAuthFork) | patch | 1.21.1-1.4.0 → 1.4.0-authnotices.2 | Cliente e servidor |
 | [SmallShipsConfigFork](patches/SmallShipsConfigFork) | patch | 2.0.2 → 2.0.3-nata | Cliente e servidor |
 | [PalasItemClear](patches/PalasItemClear) | patch | v0.1.2 → 0.1.2-local.2 | Servidor |
+| [MekaTaCZCompat](mods/MekaTaCZCompat) | original | 1.0.0 | Cliente |
+| [TaCZInventorySyncFork](patches/TaCZInventorySyncFork) | patch | 1.1.8-hotfix-r7 → 1.1.8-hotfix-r8-server | Servidor |
 
 ## Fontes e compilados
 
@@ -40,3 +42,9 @@ No Windows, configure JAVA_HOME para seu JDK 21 antes de compilar.
 Os patches foram testados em desenvolvimento antes deste registro. Resumo em [VALIDATION.md](VALIDATION.md).
 O status de testes graficos e de integracao e especificado separadamente; compilar nao comprova todos os fluxos em jogo.
 As versoes de mods de terceiros sem alteracoes devem ser obtidas nos projetos oficiais.
+
+## Atualizacao de 14/11/2026
+
+Inclui TrophyHeads 1.0.3, TitleSystem 1.0.2 e PackRules 1.0.5, alem do builder TaCZ r8 server e MekaTaCZCompat 1.0.0. As versoes do catalogo descrevem os fontes publicados; nao afirmam que todos os servidores ou clientes ja os instalaram.
+
+MekaTaCZCompat e um mod separado para o cliente, sem alterar o JAR do Mekanism. TaCZInventorySyncFork gera um JAR de substituicao para o servidor. Os originais de terceiros continuam sendo obtidos dos autores; o repositorio publica o codigo do patch e a verificacao SHA-256 da base.

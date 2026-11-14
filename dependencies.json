@@ -24,5 +24,25 @@
     "sha256": "a90ccb10cd5be275730c2977bfd2594a5d4f8ca35db29cea40de4deea29fe3f1",
     "from": "mods/PackRules/deps/mobchampions-1.21.1-neoforge-1.0.2.2-NEOFORGE.jar",
     "member": "META-INF/jarjar/whitenoise-1.21.1-neoforge-2.2.1.jar"
+  },
+  {
+    "path": "mods/PackRules/deps/ProjectE-1.21.1-PE1.1.0.jar",
+    "sha256": "fec9389d8b70fcf87331a0bcc41b78ada79c1e6326ef02a7bb6db9a1d5a4c48b",
+    "url": "https://mediafilez.forgecdn.net/files/6611/984/ProjectE-1.21.1-PE1.1.0.jar"
+  },
+  {
+    "path": "mods/MekaTaCZCompat/deps/Mekanism-1.21.1-10.7.19.85.jar",
+    "sha256": "004dbc9f3106f4d192aeaa1ee1190dd16ec9ca8059ed3d093b80034f4c574f43",
+    "url": "https://cdn.modrinth.com/data/Ce6I4WUE/versions/5KzzycBT/Mekanism-1.21.1-10.7.19.85.jar"
+  },
+  {
+    "path": "mods/MekaTaCZCompat/deps/tacz-neoforge-1.21.1-1.1.8-hotfix-r7.jar",
+    "sha256": "fa3a09f15265a4065a566960a8deab315f6c601a5f9a542840b362d455dd5470",
+    "url": "https://cdn.modrinth.com/data/OypNE65K/versions/62q6mB5Q/tacz-neoforge-1.21.1-1.1.8-hotfix-r7.jar"
+  },
+  {
+    "path": "patches/TaCZInventorySyncFork/upstream/tacz-neoforge-1.21.1-1.1.8-hotfix-r7.jar",
+    "sha256": "fa3a09f15265a4065a566960a8deab315f6c601a5f9a542840b362d455dd5470",
+    "url": "https://cdn.modrinth.com/data/OypNE65K/versions/62q6mB5Q/tacz-neoforge-1.21.1-1.1.8-hotfix-r7.jar"
   }
 ]

@@ -14,6 +14,17 @@
 
 Este resumo registra validacoes anteriores; logs brutos, mundos e identidades de jogadores nao sao publicados.
 
-## Build desta publicacao
+## Build da publicacao inicial — 06/11/2026
 
 Os nove projetos ativos compilaram nesta copia. As classes executaveis geradas sao identicas as dos artefatos ja validados. Os testes unitarios executados somam 63 casos, sem falhas. Detalhes em compilation-results.json.
+
+## Atualizacao — 14/11/2026
+
+TrophyHeads 1.0.3, TitleSystem 1.0.2, PackRules 1.0.5, MekaTaCZCompat 1.0.0 e TaCZInventorySyncFork recompilaram a partir da estrutura publica do repositorio. Detalhes em update-validation.json.
+
+- TrophyHeads/TitleSystem: validacao local anterior incluiu entrega ao assassino, protecao contra quatro integracoes de imas, cabecas antigas e persistencia apos renascer/reiniciar. Foram 82 verificacoes automatizadas. Corpse nao estava instalado; nao afirmar validacao especifica desse mod.
+- TaCZ: 41 verificacoes do fluxo de municao; o jogador comparou o servidor local com e sem o patch, reproduzindo a falha apenas sem a correcao. O builder confirma que somente duas classes de servidor e a versao existente mudaram.
+- MekaTaCZCompat: startup isolado confirmou carregamento e injecao; resultado visual aceito pelo jogador. Nao ha cobertura visual automatizada de cada arma.
+- PackRules: inclui precificacao e auditoria EMC. Esta atualizacao de fontes nao altera arquivos ou configuracoes de servidores em execucao.
+
+Compilar estes projetos nao repete os testes historicos nem comprova ausencia de malware.

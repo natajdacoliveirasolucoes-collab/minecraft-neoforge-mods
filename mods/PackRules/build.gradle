@@ -15,6 +15,7 @@ neoForge {
 }
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
 dependencies {
+    compileOnly files('deps/ProjectE-1.21.1-PE1.1.0.jar')
     compileOnly files('deps/mobchampions-1.21.1-neoforge-1.0.2.2-NEOFORGE.jar')
     compileOnly files('deps/whitenoise-inspection.jar')
 }
